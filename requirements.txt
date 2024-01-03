@@ -1,0 +1,2 @@
+# python packages to install, one per line
+ipywidgets
