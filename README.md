@@ -4,25 +4,36 @@ This is an [NVIDIA AI Workbench](https://developer.nvidia.com/blog/develop-and-d
 ## Project Description
 NeMotron-3 is a robust, powerful family of Large Language Models that can provide compelling responses on a wide range of tasks. While the 8B parameter base model serves as a strong baseline for multiple downstream tasks, they can lack in domain-specific knowledge or proprietary or otherwise sensitive information. Fine-tuning is often used as a means to update a model for a specific task or tasks to better respond to domain-specific prompts. This notebook walks through downloading the NeMotron-3 8B model from Hugging Face, preparing a custom question-answering dataset, and fine-tuning the base model on the dataset using NeMo Framework and parameter-efficient fine-tuning (PEFT) methods like LoRA and P-Tuning.
 
-## System Requirements
-* Operating System: Ubuntu 22.04
+## System Requirements:
+* Operating System: Linux, Windows WSL, or Mac; tested on Ubuntu 20.04
 * CPU requirements: None, tested with Intel&reg; Xeon&reg; Platinum 8380 CPU @ 2.30GHz
-* GPU requirements: Any NVIDIA training GPU(s), tested with 1x NVIDIA A100-80GB
+* GPU requirements: Any NVIDIA training GPU, tested with NVIDIA A100-80GB
 * NVIDIA driver requirements: Latest driver version
 * Storage requirements: 40GB
 
 # Prerequisites
-1. The NeMo Frameworks training container is used by this example project. This container is in General Availability and is open to the public. Sign up for access [here](https://developer.nvidia.com/nemo-framework/join).
-2. Before proceeding with this workflow, you will need to ensure you already have the Llama2 7B model downloaded from Huggingface. If not, please follow these instructions (also provided at the start of the notebook): 
+
+1. This project uses the NeMo Frameworks Training container. This container is in General Availability and is open to the public through a sign-up form. Sign up for access [here](https://developer.nvidia.com/nemo-framework/join).
+
+2. Before proceeding with this workflow, you will need to ensure you already have the NeMotron 8B model downloaded from Huggingface. If not, please follow these instructions (also provided at the start of the notebook): 
    
    First, the 8B-base variant of NeMotron-3 needs to be downloaded to your machine. To download the model, follow the instructions [here](https://huggingface.co/nvidia/nemotron-3-8b-base-4k) to accept the NVIDIA AI Foundation Models Community License Agreement for access to the models in the NeMotron family. Please note that your HuggingFace account email address MUST match the email you provide on NVIDIA's developer website, or your request will not be approved.
    
-   Once approved, use your HuggingFace username and API key to download NeMotron-3 7B (non-chat version) to your workstation where you will be fine-tuning the model. To pull the model files to your local machine, you may navigate on your local machine to the folder you want to contain your model directory and use a ```git lfs clone https://huggingface.co/<namespace>/<repo-name>``` call to [NVIDIA's HF repository](https://huggingface.co/nvidia/nemotron-3-8b-base-4k/tree/main).
+   Once approved, use your HuggingFace username and API key to download NeMotron-3 8B (non-chat version) to your workstation where you will be fine-tuning the model. To pull the model files to your local machine, you may navigate on your local machine to the folder you want to contain your model directory and use a ```git lfs clone https://huggingface.co/<namespace>/<repo-name>``` call to [NVIDIA's HF repository](https://huggingface.co/nvidia/nemotron-3-8b-base-4k/tree/main).
 
-   This directory will be specified to AI Workbench later (Step 6 of the Quickstart) as a mount for this project so that you can access the model files while working inside the container. 
+   Remember this directory, as this directory will be specified to AI Workbench later as a mount for this project so that you can access the model files while working inside the container. 
 
 # Quickstart
-If you have NVIDIA AI Workbench already installed, you can use this Project in AI Workbench on your choice of machine by:
+If you have NVIDIA AI Workbench already installed, you can open this Project in AI Workbench on your choice of machine by:
+
+### On Desktop
+Fork this Project to your own Github namespace and copy the clone link. Open the Desktop app and select your location of choice. Select "Clone Project" and enter the clone link. Wait for the build to complete. 
+
+Once the build completes, select "Open Jupyterlab" on the top right corner to start the application in a new window; you may be prompted to specify the location of your model for the container to access as a mount. Navigate to the `code` directory of the project. Then, open your NeMotron fine-tuning notebook of choice and get started. Happy coding!
+
+### On CLI
+Get started in the CLI by: 
+
 1. Forking this Project to your own GitHub namespace and copying the link
 
    ```
@@ -59,7 +70,7 @@ If you have NVIDIA AI Workbench already installed, you can use this Project in A
 
 6. Specify the file path of the mount, eg. where the `nemotron-3-8b-base-4k` model directory lives on your host machine.
 
-   eg. if your downloaded Llama2 model directory resides in your home path, enter ```/home/[user]```
+   eg. if your downloaded NeMotron model directory resides in your home path, enter ```/home/[user]```
 
 7. Once the JupyterLab application spins up, you can verify that your downloaded ```nemotron-3-8b-base-4k``` model lives under the ```models```directory of the project.
 
