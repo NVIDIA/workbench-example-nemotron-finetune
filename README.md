@@ -23,8 +23,6 @@ Nemotron-3 is a robust, powerful family of Large Language Models that can provid
 
 * ```nemotron-ptuning.ipynb```: This notebook provides a sample workflow for fine-tuning the Nemotron base model for extractive Question-Answering on a custom dataset using customized prompt formattings and a p-tuning method.
 
-Have questions? Please direct any issues, fixes, suggestions, and discussion on this project to the DevZone Members Only Forum thread [here](https://forums.developer.nvidia.com/t/support-workbench-example-project-nemotron-finetune/278377). 
-
 # Quickstart
 
 ### Prerequisites
@@ -38,7 +36,7 @@ Have questions? Please direct any issues, fixes, suggestions, and discussion on 
 
 If you do not NVIDIA AI Workbench installed, first follow the installation instructions for AI Workbench [here](https://developer.nvidia.com/ai-workbench-beta/). Then, 
 
-1. Fork this Project to your own GitHub namespace and copying the link
+1. Fork this Project to your own GitHub namespace and copy the link
 
    ```
    https://github.com/[your_namespace]/<project_name>
@@ -118,3 +116,5 @@ This notebook has been tested with a 1x NVIDIA A100-80gb GPU system and the Beta
 This NVIDIA AI Workbench example project is under the [Apache 2.0 License](https://github.com/nv-edwli/workbench-example-nemotron-finetune/blob/main/LICENSE.txt)
 
 This project may utilize additional third-party open source software projects. Review the license terms of these open source projects before use. Third party components used as part of this project are subject to their separate legal notices or terms that accompany the components. You are responsible for confirming compliance with third-party component license terms and requirements. 
+
+Have questions? Please direct any issues, fixes, suggestions, and discussion on this project to the DevZone Members Only Forum thread [here](https://forums.developer.nvidia.com/t/support-workbench-example-project-nemotron-finetune/278377). 
