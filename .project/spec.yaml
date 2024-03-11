@@ -22,7 +22,7 @@ layout:
 environment:
   base:
     registry: nvcr.io
-    image: ea-bignlp/ga-participants/nemofw-training:23.08.03
+    image: nvidia/nemo:24.01.framework
     build_timestamp: "20230929092614"
     name: NeMo Framework GA Training Container
     supported_architectures:
@@ -52,58 +52,25 @@ environment:
           trim_prefix: false
         url_command: jupyter notebook list | head -n 2 | tail -n 1 | cut -f1 -d' '
           | grep -v 'Currently'
-    - name: tensorboard
-      type: tensorboard
-      class: webapp
-      start_command: tensorboard --logdir \$TENSORBOARD_LOGS_DIRECTORY --path_prefix=\$PROXY_PREFIX
-        --bind_all
-      health_check_command: '[ \$(curl -o /dev/null -s -w ''%{http_code}'' http://localhost:\$TENSORBOARD_PORT\$PROXY_PREFIX/)
-        == ''200'' ]'
-      stop_command: ""
-      user_msg: ""
-      icon_url: ""
-      webapp_options:
-        autolaunch: true
-        port: "6006"
-        proxy:
-          trim_prefix: false
-        url: http://localhost:6006
     programming_languages:
     - python3
     icon_url: ""
-    image_version: 1.0.13
+    image_version: "24.01"
     os: linux
     os_distro: ubuntu
     os_distro_release: "20.04"
     schema_version: v2
     user_info:
-      uid: "0"
-      gid: "0"
-      username: root
+      uid: ""
+      gid: ""
+      username: ""
     package_managers:
     - name: apt
       binary_path: /usr/bin/apt
-      installed_packages:
-      - build-essential
-      - ca-certificates
-      - curl
-      - locales
-      - git
-      - git-lfs
-      - openssl=1.1.1f-1ubuntu2.17
-      - libssl1.1=1.1.1f-1ubuntu2.17
-      - vim
+      installed_packages: []
     - name: conda
       binary_path: /opt/conda/bin/conda
-      installed_packages:
-      - jupyterlab=3.4.4
-      - tensorboard
-      - nodejs
-      - notebook
-      - python=3.10.12
-      - pytorch=1.13.1
-      - torchvision
-      - pytorch-cuda=11.7.0
+      installed_packages: []
     - name: pip
       binary_path: /opt/conda/bin/pip
       installed_packages: []
@@ -116,7 +83,11 @@ execution:
     gpu:
       requested: 1
     sharedMemoryMB: 1024
-  secrets: []
+  secrets:
+  - variable: HF_USERNAME
+    description: Hugging Face account username for Accessing Llama 2
+  - variable: HF_API_KEY
+    description: Hugging Face API Key for Accessing Llama 2
   mounts:
   - type: project
     target: /project/
@@ -128,5 +99,5 @@ execution:
     options: volumeName=tensorboard-logs-volume
   - type: host
     target: /project/models/
-    description: Location of NeMotron Model
+    description: Location on HOST that will contain the Nemotron model
     options: ""

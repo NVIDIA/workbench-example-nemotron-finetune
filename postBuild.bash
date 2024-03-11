@@ -3,4 +3,8 @@
 # after all system packages and programming language specific package have been installed.
 #
 # Note: This file may be removed if you don't need to use it
-jupyter nbextension enable --py widgetsnbextension
+
+sudo -E curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo -E bash
+sudo -E apt-get install git-lfs
+
+sudo -E chmod -R 777 /opt/NeMo
