@@ -5,6 +5,17 @@ This is an [NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/s
 * CPU requirements: None, (tested with Intel&reg; Xeon&reg; Platinum 8380 CPU @ 2.30GHz)
 * GPU requirements: **Minimum 1x NVIDIA A100-80GB**
 
+### Sizing Guide
+
+| GPU VRAM | Example Hardware | Compatible? |
+| -------- | ------- | ------- |
+| 24 GB | RTX 3090/4090, RTX A5000/5500, A10/30 | N |
+| 32 GB | RTX 5000 Ada,  | N |
+| 40 GB | A100-40GB | N |
+| 48 GB | RTX 6000 Ada, L40/L40S, A40 | N |
+| 80 GB | A100-80GB | Y |
+| >80 GB | 8x A100-80GB | Y |
+
 ### Project Description
 Nemotron-3 is a robust, powerful family of Large Language Models that can provide compelling responses on a wide range of tasks. While the 8B parameter base model serves as a strong baseline for multiple downstream tasks, they can lack in domain-specific knowledge or proprietary or otherwise sensitive information. Fine-tuning is often used as a means to update a model for a specific task or tasks to better respond to domain-specific prompts. These notebooks walk through downloading the Nemotron-3 model from HuggingFace, preparing a custom dataset, and fine-tuning the pretrained base model against this new dataset. 
 
