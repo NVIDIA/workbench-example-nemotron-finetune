@@ -10,7 +10,7 @@ This is an [NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/s
 | GPU VRAM | Example Hardware | Compatible? |
 | -------- | ------- | ------- |
 | 24 GB | RTX 3090/4090, RTX A5000/5500, A10/30 | N |
-| 32 GB | RTX 5000 Ada,  | N |
+| 32 GB | RTX 5000 Ada  | N |
 | 40 GB | A100-40GB | N |
 | 48 GB | RTX 6000 Ada, L40/L40S, A40 | N |
 | 80 GB | A100-80GB | Y |
