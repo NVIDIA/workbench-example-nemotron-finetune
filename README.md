@@ -1,5 +1,5 @@
 # NVIDIA AI Workbench: Introduction
-This is an [NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/) example Project that demonstrates how to fine-tune a Nemotron-3 8B large language model (LLM) on a custom dataset using NeMo Framework. Users in the [AI Workbench Beta Program](https://developer.nvidia.com/ai-workbench-beta) can get up and running with this Project in minutes. Please note the project requirements:
+This is an [NVIDIA AI Workbench](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/) example project that demonstrates how to fine-tune a Nemotron-3 8B large language model (LLM) on a custom dataset in minutes using [NVIDIA NeMo Framework](https://docs.nvidia.com/nemo-framework/index.html). Please note the project requirements:
 
 * Operating System: Ubuntu 22.04, Windows (WSL2), MacOS 12+
 * CPU requirements: None, (tested with Intel&reg; Xeon&reg; Platinum 8380 CPU @ 2.30GHz)
@@ -23,6 +23,8 @@ Nemotron-3 is a robust, powerful family of Large Language Models that can provid
 
 * ```nemotron-ptuning.ipynb```: This notebook provides a sample workflow for fine-tuning the Nemotron base model for extractive Question-Answering on a custom dataset using customized prompt formattings and a p-tuning method.
 
+If you are interested in trying out another model with NeMo Framework, check out this AI Workbench example project for [Llama 2](https://github.com/NVIDIA/workbench-example-llama2-finetune).
+
 # Quickstart
 
 ### Prerequisites
@@ -34,7 +36,7 @@ Nemotron-3 is a robust, powerful family of Large Language Models that can provid
 
 ### Tutorial (Desktop App)
 
-If you do not NVIDIA AI Workbench installed, first follow the installation instructions for AI Workbench [here](https://developer.nvidia.com/ai-workbench-beta/). Then, 
+If you do not NVIDIA AI Workbench installed, first complete the installation for AI Workbench [here](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/).. Then, 
 
 1. Fork this Project to your own GitHub namespace and copy the link
 
@@ -61,7 +63,7 @@ If you do not NVIDIA AI Workbench installed, first follow the installation instr
 7. Navigate to the `code/notebooks` directory of the project. Then, open your fine-tuning notebook of choice and get started. Happy coding!
 
 ### Tutorial (CLI-Only)
-Some users may choose to use the **CLI tool only** instead of the Desktop App. If you do not NVIDIA AI Workbench installed, first follow the installation instructions for AI Workbench [here](https://developer.nvidia.com/ai-workbench-beta/). Then, 
+Some users may choose to use the **CLI tool only** instead of the Desktop App. If you do not NVIDIA AI Workbench installed, first complete the installation for AI Workbench [here](https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/). Then, 
 1. Fork this Project to your own GitHub namespace and copying the link
 
    ```
@@ -110,10 +112,10 @@ Some users may choose to use the **CLI tool only** instead of the Desktop App. I
 ---
 
 ## Tested On
-This notebook has been tested with a 1x NVIDIA A100-80gb GPU system and the Beta version of NVIDIA AI Workbench: ```nvwb 0.21.3 (internal; linux; amd64; go1.21.3; Tue Mar  5 03:55:43 UTC 2024)```
+This notebook has been tested with a 1x NVIDIA A100-80gb GPU system and the GA version of NVIDIA AI Workbench: ```nvwb 0.21.3 (internal; linux; amd64; go1.21.3; Tue Mar  5 03:55:43 UTC 2024)```
 
 # License
-This NVIDIA AI Workbench example project is under the [Apache 2.0 License](https://github.com/nv-edwli/workbench-example-nemotron-finetune/blob/main/LICENSE.txt)
+This NVIDIA AI Workbench example project is under the [Apache 2.0 License](https://github.com/NVIDIA/workbench-example-nemotron-finetune/blob/main/LICENSE.txt)
 
 This project may utilize additional third-party open source software projects. Review the license terms of these open source projects before use. Third party components used as part of this project are subject to their separate legal notices or terms that accompany the components. You are responsible for confirming compliance with third-party component license terms and requirements. 
 
